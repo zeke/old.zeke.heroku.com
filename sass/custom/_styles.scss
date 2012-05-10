@@ -1,0 +1,50 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+html, body {
+	background: white;
+}
+
+body > header {
+	background: transparent url('../images/grasshopper.gif') no-repeat;
+	padding-top: 120px;
+}
+
+body > header h1 a, body > header h1 a:visited {
+	font-weight: bold;
+	color: black;
+}
+
+body > header h2 {
+	font-weight: normal;
+}
+
+nav {
+	display: none;
+}
+
+div#main {
+	background: none;
+}
+
+aside.sidebar {
+	display: none;
+}
+
+span.toggle-sidebar {
+	display: none;
+}
+
+div#content {
+	background: none;
+	margin-right: 0;
+	border: none;
+}
+
+#content .blog-index article h1 {
+	color: #7b8c08;
+}
+
+#content .blog-index article div.entry-content {
+	color: #444;
+}
