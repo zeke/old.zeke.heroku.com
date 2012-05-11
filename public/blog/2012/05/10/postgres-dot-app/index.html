@@ -5,15 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - spring-grasshopper-86</title>
+  <title>Postgres.app - spring-grasshopper-86</title>
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="Blog Archive 2012 Gmail on the iPhone
-May 11 2012 Keeping your unidyno humming
-May 11 2012 Bun Dull Egg Zeck
-May 10 2012 What the eff is clang?
-May &hellip;">
+  <meta name="description" content="Factor X in Adam Wiggins&#8217; Twelve-Factor App
+is dev/prod parity: the idea that your development, staging, and production environments
+should be &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +20,7 @@ May &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zeke.heroku.com/blog/archives">
+  <link rel="canonical" href="http://zeke.heroku.com/blog/2012/05/10/postgres-dot-app">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,81 +65,106 @@ May &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Postgres.app</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T23:00:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Factor X in Adam Wiggins&#8217; <a href="http://www.12factor.net/dev-prod-parity">Twelve-Factor App</a>
+is <strong>dev/prod parity</strong>: the idea that your development, staging, and production environments
+should be as similar as possible to minimize unexpected problems.</p>
 
-  
-  <h2>2012</h2>
+<p>For the heroku user, one easy move toward such parity is using postgres in the development
+environment. In the past I was reluctant to use postgres because it was difficult to install
+and it was always easier to use MySQL or SQLite because the barrier was lower.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/05/11/gmail-on-the-iphone/">Gmail on the iPhone</a></h1>
-<time datetime="2012-05-11T00:38:00-07:00" pubdate><span class='month'>May</span> <span class='day'>11</span> <span class='year'>2012</span></time>
+<p>But I&#8217;m happy to say that the <a href="http://twitter.com/mattt">@mattt</a>&#8217;s new project,
+<a href="http://postgresapp.com/">Postgres.app</a>, soothes that pain: <em>&#8220;Open the app, and you have
+a PostgreSQL server ready and awaiting new connections. Close the app, and the server shuts down.&#8221;</em>
+Here&#8217;s an example database configuration that works with Postgres.app right out of the box:</p>
 
+<pre><code>development:
+  adapter: postgresql
+  host: localhost
+  database: dreamboat-development
 
-</article>
+test: &amp;test
+  adapter: postgresql
+  host: localhost
+  database: dreamboat-test
+</code></pre>
 
+<p>That&#8217;s not all folks. Postgress.app has a great logo too!</p>
 
-
-<article>
-  
-<h1><a href="/blog/2012/05/11/ping-heroku-keepalive/">Keeping your unidyno humming</a></h1>
-<time datetime="2012-05-11T00:12:00-07:00" pubdate><span class='month'>May</span> <span class='day'>11</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/05/10/bun-dull-egg-zeck/">Bun Dull Egg Zeck</a></h1>
-<time datetime="2012-05-10T23:56:00-07:00" pubdate><span class='month'>May</span> <span class='day'>10</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/05/10/clang/">What the eff is clang?</a></h1>
-<time datetime="2012-05-10T23:42:00-07:00" pubdate><span class='month'>May</span> <span class='day'>10</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/05/10/postgres-dot-app/">Postgres.app</a></h1>
-<time datetime="2012-05-10T23:00:00-07:00" pubdate><span class='month'>May</span> <span class='day'>10</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/05/10/so-it-begins/">So It begins</a></h1>
-<time datetime="2012-05-10T22:50:00-07:00" pubdate><span class='month'>May</span> <span class='day'>10</span> <span class='year'>2012</span></time>
-
-
-</article>
-
+<p><a href="http://postgresapp.com/"><img src="images/extra/netsuke.png" alt="netsuke" /></a></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Zeke Sikelianos</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T23:00:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zeke.heroku.com/blog/2012/05/10/postgres-dot-app/" data-via="" data-counturl="http://zeke.heroku.com/blog/2012/05/10/postgres-dot-app/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/10/so-it-begins/" title="Previous Post: So It begins">&laquo; So It begins</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/10/clang/" title="Next Post: What the eff is clang?">What the eff is clang? &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>

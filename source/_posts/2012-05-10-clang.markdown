@@ -1,0 +1,25 @@
+---
+layout: post
+title: "What the eff is clang?"
+date: 2012-05-10 23:42
+comments: true
+categories: 
+---
+
+On my first day at heroku, I was happily setting up my machine for
+development until a collision between Xcode 4.3.2 and rvm halted me in my tracks. 
+After much googling, I found this insightful bit on 
+[jfire.io](http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/):
+
+*Ruby on Mac OS Lion is going through a bit of a rough patch, installation-wise. With Xcode 4.2, clang became the default compiler and gcc was no longer included. Unfortunately, this has caused a lot of grief for Rubyists on OS X, because for a while, MRI did not officially support compiling with clang. With the release of 1.9.3-p125, that situation has changed–clang is now officially supported–but there are still some gotchas. This post details my toolchain and process for running MRI 1.9.3 and 1.8.7 on Lion with Xcode 4.3.*
+
+Installing GCC with homebrew is what solved it:
+
+    brew update
+    brew install autoconf automake
+    brew install https://raw.github.com/Homebrew/homebrew-dupes/master/apple-gcc42.rb
+    rvm get head
+    rvm install 1.8.7
+    rvm install 1.9.3-head
+
+Now I know what [clang](http://en.wikipedia.org/wiki/Clang) is. Yay.

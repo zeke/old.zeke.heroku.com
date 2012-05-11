@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-05-10T00:47:05-07:00</updated>
+  <updated>2012-05-11T00:45:11-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -14,52 +14,137 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Blossoming Warrior]]></title>
-    <link href="http://zeke.heroku.com/blog/2012/05/07/blossoming-warrior/"/>
-    <updated>2012-05-07T22:42:00-07:00</updated>
-    <id>http://zeke.heroku.com/blog/2012/05/07/blossoming-warrior</id>
-    <content type="html"><![CDATA[<p>rake db:schema:load</p>
+    <title type="html"><![CDATA[Gmail on the iPhone]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/11/gmail-on-the-iphone/"/>
+    <updated>2012-05-11T00:38:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/11/gmail-on-the-iphone</id>
+    <content type="html"><![CDATA[<p>ProTip: You might think <strong>Gmail</strong> would be the option to pick here, but the better choice is actually <strong>Exchange</strong>.
+Setting up your iPhone Gmail account with Exchange means your calendars and contacts get synced in addition to
+your mail.</p>
 
-<h2>Haiku</h2>
+<p><img src="http://f.cl.ly/items/0j2X3J1P0m1x1R0r191L/DropCloud%20May%208,%202012%203:23:49%20PM.png" alt="iPhone Gmail" /></p>
 
-<p>Array sample?</p>
+<p><img src="http://f.cl.ly/items/1E1s2V0o0E2w1A0D3z1c/DropCloud%20May%208,%202012%203:22:51%20PM.png" alt="iPhone Gmail" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Keeping your unidyno humming]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/11/ping-heroku-keepalive/"/>
+    <updated>2012-05-11T00:12:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/11/ping-heroku-keepalive</id>
+    <content type="html"><![CDATA[<p>If you&#8217;ve got a single-dyno app that keeps winding down from inactivity
+and consequently taking a long time to restart, you can use the free
+<a href="https://addons.heroku.com/scheduler">heroku scheduler</a> addon to keep it alive.</p>
 
-<p>32 adjectives
-45 nouns</p>
+<pre><code>heroku addons:add scheduler:standard
+heroku addons:open scheduler
+</code></pre>
 
-<h2>bundle exec</h2>
+<p><img src="http://f.cl.ly/items/2X0j1u010E3T0e1S1N0h/Screen%20Shot%202012-05-11%20at%2012.23.18%20AM.png" alt="heroku scheduler" /></p>
 
-<p>http://blog.davidchelimsky.net/2011/07/18/stop-typing-bundle-exec/</p>
+<p>Put this in your Rakefile and smoke it. I mean push it.</p>
 
-<h2>Ruby Installation Woes</h2>
+<pre><code>require "net/http"
 
-<p>http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/</p>
+desc "Ping app"
+task :ping do
+  url = 'my-app.herokuapp.com'
+  puts "ping? (#{url})"
+  r = Net::HTTP.new(url, 80).request_head('/')
+  puts "pong! (#{r.code} #{r.message})"
+end
+</code></pre>
 
-<p>Ruby on Mac OS Lion is going through a bit of a rough patch, installation-wise. With Xcode 4.2, clang became the default compiler and gcc was no longer included. Unfortunately, this has caused a lot of grief for Rubyists on OS X, because for a while, MRI did not officially support compiling with clang. With the release of 1.9.3-p125, that situation has changed–clang is now officially supported–but there are still some gotchas. This post details my toolchain and process for running MRI 1.9.3 and 1.8.7 on Lion with Xcode 4.3.</p>
+<p>Sha. Push it. Push it reeeaall good.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bun Dull Egg Zeck]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/10/bun-dull-egg-zeck/"/>
+    <updated>2012-05-10T23:56:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/10/bun-dull-egg-zeck</id>
+    <content type="html"><![CDATA[<p>New flash! When working on a ruby project, you should prepend every command
+with <strong>bundle exec</strong> to ensure you&#8217;re using the bundled dependencies, and not
+stuff that&#8217;s specific to your environment. But who wants to type
+<strong>bundle exec</strong> 500 times a day? Neither I nor
+<a href="http://blog.davidchelimsky.net/2011/07/18/stop-typing-bundle-exec/">David Chelimsky</a>.
+That&#8217;s who.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What the eff is clang?]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/10/clang/"/>
+    <updated>2012-05-10T23:42:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/10/clang</id>
+    <content type="html"><![CDATA[<p>On my first day at heroku, I was happily setting up my machine for
+development until a collision between Xcode 4.3.2 and rvm halted me in my tracks.
+After much googling, I found this insightful bit on
+<a href="http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/">jfire.io</a>:</p>
 
-<h2>Postgres.app</h2>
+<p><em>Ruby on Mac OS Lion is going through a bit of a rough patch, installation-wise. With Xcode 4.2, clang became the default compiler and gcc was no longer included. Unfortunately, this has caused a lot of grief for Rubyists on OS X, because for a while, MRI did not officially support compiling with clang. With the release of 1.9.3-p125, that situation has changed–clang is now officially supported–but there are still some gotchas. This post details my toolchain and process for running MRI 1.9.3 and 1.8.7 on Lion with Xcode 4.3.</em></p>
 
-<p>http://postgresapp.com/</p>
+<p>Installing GCC with homebrew is what solved it:</p>
 
-<h2>Keepalive Hack</h2>
+<pre><code>brew update
+brew install autoconf automake
+brew install https://raw.github.com/Homebrew/homebrew-dupes/master/apple-gcc42.rb
+rvm get head
+rvm install 1.8.7
+rvm install 1.9.3-head
+</code></pre>
 
-<p>keep your app live with scheduler</p>
+<p>Now I know what <a href="http://en.wikipedia.org/wiki/Clang">clang</a> is. Yay.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Postgres.app]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/10/postgres-dot-app/"/>
+    <updated>2012-05-10T23:00:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/10/postgres-dot-app</id>
+    <content type="html"><![CDATA[<p>Factor X in Adam Wiggins&#8217; <a href="http://www.12factor.net/dev-prod-parity">Twelve-Factor App</a>
+is <strong>dev/prod parity</strong>: the idea that your development, staging, and production environments
+should be as similar as possible to minimize unexpected problems.</p>
 
-<h2>Sudo</h2>
+<p>For the heroku user, one easy move toward such parity is using postgres in the development
+environment. In the past I was reluctant to use postgres because it was difficult to install
+and it was always easier to use MySQL or SQLite because the barrier was lower.</p>
 
-<p>https://github.com/heroku/heroku-sudo</p>
+<p>But I&#8217;m happy to say that the <a href="http://twitter.com/mattt">@mattt</a>&#8217;s new project,
+<a href="http://postgresapp.com/">Postgres.app</a>, soothes that pain: <em>&#8220;Open the app, and you have
+a PostgreSQL server ready and awaiting new connections. Close the app, and the server shuts down.&#8221;</em>
+Here&#8217;s an example database configuration that works with Postgres.app right out of the box:</p>
 
-<p>if you need access to an app
-ask Dane Harrigan for heroku sudo access
-then you can do heroku sudo command on any app
-even if you don&#8217;t own it
-and add yourself as a collaborator
-for example</p>
+<pre><code>development:
+  adapter: postgresql
+  host: localhost
+  database: dreamboat-development
 
-<h2>Heroku Email on your iPhone</h2>
+test: &amp;test
+  adapter: postgresql
+  host: localhost
+  database: dreamboat-test
+</code></pre>
 
-<p>http://cl.ly/GTfn
-http://cl.ly/GTHT</p>
+<p>That&#8217;s not all folks. Postgress.app has a great logo too!</p>
+
+<p><a href="http://postgresapp.com/"><img src="images/extra/netsuke.png" alt="netsuke" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[So It begins]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/10/so-it-begins/"/>
+    <updated>2012-05-10T22:50:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/10/so-it-begins</id>
+    <content type="html"><![CDATA[<p>Master Po: Do you hear the grasshopper that is at your feet?<br>
+Young Caine: Old man, how is it that you hear these things?<br>
+Master Po: Young man, how is it that you do not?</p>
+
+<p><img src="images/extra/insecte-sauterelle.jpg" alt="Insect Sauterelle Origami" /></p>
 ]]></content>
   </entry>
   

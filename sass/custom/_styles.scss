@@ -36,16 +36,50 @@ span.toggle-sidebar {
 	display: none;
 }
 
-div#content {
+#content {
 	background: none;
 	margin-right: 0;
 	border: none;
 }
 
+#content div.pagination {
+	display: none;
+}
+
+#content .blog-index article header {
+	margin: 2em 0 0.5em 0;
+}
+
 #content .blog-index article h1 {
 	color: #7b8c08;
+	font-size: 1.5em;	
+	text-transform: none;
 }
 
 #content .blog-index article div.entry-content {
 	color: #444;
+	font-family: "Georgia", "Helvetica Neue", Helvetica, Arial;
+}
+
+#content .blog-index article div.entry-content a {
+	color: #637b00;
+}
+
+#content .blog-index article div.entry-content a:visited {
+	color: #637b00;
+}
+
+pre {
+	background-color: #F0F0F0;
+	color: #000;
+	border: 1px solid #DDD;
+}
+
+em {
+	color: #666
+}
+
+body > footer {
+	background: none;
+	margin-bottom: 300px
 }
