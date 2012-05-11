@@ -7,7 +7,7 @@ categories:
 ---
 
 ProTip: You might think **Gmail** would be the option to pick here, but the better choice is actually **Exchange**.
-Setting up your iPhone Gmail account with Exchange means your calendars and contacts get synced in addition to
+Setting up your Gmail account with Exchange means your calendars and contacts get synced in addition to
 your mail.
 
 

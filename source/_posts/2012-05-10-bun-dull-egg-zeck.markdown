@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-New flash! When working on a ruby project, you should prepend every command
+News flash! When working on a ruby project, you should prepend every shell command
 with **bundle exec** to ensure you're using the bundled dependencies, and not 
 stuff that's specific to your environment. But who wants to type 
 **bundle exec** 500 times a day? Neither I nor

@@ -7,7 +7,7 @@ categories:
 ---
 
 On my first day at heroku, I was happily setting up my machine for
-development until a collision between Xcode 4.3.2 and rvm halted me in my tracks. 
+development until a collision between Xcode 4.3.2 and rvm stopped me in my tracks. 
 After much googling, I found this insightful bit on 
 [jfire.io](http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/):
 
