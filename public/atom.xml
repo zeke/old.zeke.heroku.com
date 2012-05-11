@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-05-11T00:53:54-07:00</updated>
+  <updated>2012-05-11T12:38:53-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -122,7 +122,7 @@ Here&#8217;s an example database configuration that works with Postgres.app righ
   host: localhost
   database: dreamboat-development
 
-test: &amp;test
+test:
   adapter: postgresql
   host: localhost
   database: dreamboat-test

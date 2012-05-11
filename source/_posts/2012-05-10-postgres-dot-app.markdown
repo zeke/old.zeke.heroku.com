@@ -24,7 +24,7 @@ Here's an example database configuration that works with Postgres.app right out 
       host: localhost
       database: dreamboat-development
 
-    test: &test
+    test:
       adapter: postgresql
       host: localhost
       database: dreamboat-test
