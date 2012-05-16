@@ -10,4 +10,4 @@ Master Po: Do you hear the grasshopper that is at your feet?<br>
 Young Caine: Old man, how is it that you hear these things?<br>
 Master Po: Young man, how is it that you do not?
 
-![Insect Sauterelle Origami](images/extra/insecte-sauterelle.jpg)
+{% img /images/extra/insecte-sauterelle.jpg Insect Sauterelle Origami %}

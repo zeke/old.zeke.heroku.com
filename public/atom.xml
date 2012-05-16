@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-05-14T10:06:50-07:00</updated>
+  <updated>2012-05-15T23:11:55-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The NERD Tree]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/15/the-nerd-tree/"/>
+    <updated>2012-05-15T22:42:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/15/the-nerd-tree</id>
+    <content type="html"><![CDATA[<p><img class="no-border" src="http://zeke.heroku.com/images/extra/spectropia.jpg" title="spectropia" ></p>
+
+<p>While looking over <a href="https://twitter.com/#!/em_csquared/">Chris Continanza</a>&#8217;s shoulder today I couldn&#8217;t help but notice the awesome tool he was using to navigate directory trees within vim. It&#8217;s called <a href="https://github.com/scrooloose/nerdtree">nerdtree</a>. Yep, <a href="https://github.com/scrooloose/nerdtree">nerdtree</a>. Being a nerd and an arbophile, I installed it right away and am now climbing trees in vim like a pro. Keyboard-based file navigation in the terminal might just mean one less commercial software dependency in my toolbox: <a href="http://binarynights.com/">Forklift</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Gmail on the iPhone]]></title>
@@ -130,7 +141,9 @@ test:
 
 <p>That&#8217;s not all folks. Postgress.app has a great logo too!</p>
 
-<p><a href="http://postgresapp.com/"><img src="images/extra/netsuke.png" alt="netsuke" /></a></p>
+<p><a href="http://postgresapp.com/">
+  <img class="no-border" src="http://zeke.heroku.com/images/extra/netsuke.png">
+</a></p>
 ]]></content>
   </entry>
   
@@ -143,7 +156,7 @@ test:
 Young Caine: Old man, how is it that you hear these things?<br>
 Master Po: Young man, how is it that you do not?</p>
 
-<p><img src="images/extra/insecte-sauterelle.jpg" alt="Insect Sauterelle Origami" /></p>
+<p><img src="http://zeke.heroku.com/images/extra/insecte-sauterelle.jpg" title="Insect Sauterelle Origami" ></p>
 ]]></content>
   </entry>
   

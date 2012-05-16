@@ -31,4 +31,6 @@ Here's an example database configuration that works with Postgres.app right out 
       
 That's not all folks. Postgress.app has a great logo too!
 
-[![netsuke](images/extra/netsuke.png)](http://postgresapp.com/)
+<a href="http://postgresapp.com/">
+  {% img no-border /images/extra/netsuke.png %}
+</a>

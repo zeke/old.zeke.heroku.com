@@ -2,11 +2,11 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://zeke.heroku.com/blog/2012/05/10/so-it-begins/</loc>
-        <lastmod>2012-05-10T22:59:16-07:00</lastmod>
+        <lastmod>2012-05-15T23:03:04-07:00</lastmod>
     </url>
     <url>
         <loc>http://zeke.heroku.com/blog/2012/05/10/postgres-dot-app/</loc>
-        <lastmod>2012-05-11T12:25:36-07:00</lastmod>
+        <lastmod>2012-05-15T23:08:21-07:00</lastmod>
     </url>
     <url>
         <loc>http://zeke.heroku.com/blog/2012/05/10/clang/</loc>
@@ -22,14 +22,18 @@
     </url>
     <url>
         <loc>http://zeke.heroku.com/blog/2012/05/11/gmail-on-the-iphone/</loc>
-        <lastmod>2012-05-11T00:52:14-07:00</lastmod>
+        <lastmod>2012-05-15T23:03:14-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://zeke.heroku.com/blog/2012/05/15/the-nerd-tree/</loc>
+        <lastmod>2012-05-15T23:04:34-07:00</lastmod>
     </url>
     <url>
         <loc>http://zeke.heroku.com/blog/archives/</loc>
-        <lastmod>2012-05-11T12:25:36-07:00</lastmod>
+        <lastmod>2012-05-15T23:08:21-07:00</lastmod>
     </url>
     <url>
         <loc>http://zeke.heroku.com/</loc>
-        <lastmod>2012-05-11T12:25:36-07:00</lastmod>
+        <lastmod>2012-05-15T23:08:21-07:00</lastmod>
     </url>
 </urlset>
