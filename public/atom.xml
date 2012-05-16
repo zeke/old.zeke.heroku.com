@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-05-15T23:11:55-07:00</updated>
+  <updated>2012-05-15T23:51:21-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -144,6 +144,11 @@ test:
 <p><a href="http://postgresapp.com/">
   <img class="no-border" src="http://zeke.heroku.com/images/extra/netsuke.png">
 </a></p>
+
+<p><strong>Update</strong>: If you&#8217;ve already got another version of postgres installed, you may need to prepend Postgres.app&#8217;s binary to your PATH:</p>
+
+<pre><code>export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
+</code></pre>
 ]]></content>
   </entry>
   

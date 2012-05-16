@@ -34,3 +34,7 @@ That's not all folks. Postgress.app has a great logo too!
 <a href="http://postgresapp.com/">
   {% img no-border /images/extra/netsuke.png %}
 </a>
+
+**Update**: If you've already got another version of postgres installed, you may need to prepend Postgres.app's binary to your PATH:
+
+    export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
