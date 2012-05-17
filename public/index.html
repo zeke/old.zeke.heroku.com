@@ -9,8 +9,8 @@
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="I recently started an email thread in search of &#8220;the heroku way&#8221; of git branching. I got some good feedback: @pvh:
-&#8220;Don&#8217;t &hellip;">
+  <meta name="description" content="I recently started a heroku email thread in search of a good git branching strategy. I got some good feedback: @pvh:
+&#8220;Don&#8217;t branch! If &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,7 +94,7 @@
   </header>
 
 
-  <div class="entry-content"><p>I recently started an email thread in search of &#8220;the heroku way&#8221; of git branching. I got some good feedback:</p>
+  <div class="entry-content"><p>I recently started a heroku email thread in search of a good git branching strategy. I got some good feedback:</p>
 
 <p><strong><a href="https://twitter.com/#!/pvh">@pvh</a></strong>:
 &#8220;Don&#8217;t branch! If you have to branch keep it short (like, a day or two tops). In general, everything you do (everywhere!) should be designed to roll out incrementally in many small steps. [&#8230;] To be fair, we don&#8217;t want &#8216;branches&#8217;, so much as we want transient named pull requests that use branches as a transport mechanism.&#8221;</p>
@@ -114,6 +114,15 @@ master always green/deployable is crucial).&#8221;</p>
 
 <p><strong><a href="https://twitter.com/#!/glenngillen">@glenngillen</a></strong>:
 &#8220;Probably a good summation: <a href="http://scottchacon.com/2011/08/31/github-flow.html">scottchacon.com/2011/08/31/github-flow.html</a>&#8221;</p>
+
+<p><strong><a href="https://twitter.com/#!/em_csquared">@em_csquared</a></strong>:
+&#8220;I think the real answer is that the
+&#8216;heroku style&#8217; would be to do what works best for your team.
+If other teams are doing something you like you should absolutely steal it.
+And if they&#8217;re doing something you don&#8217;t then be an example of a better way.
+[&#8230;] I&#8217;ve seen us internally use both &#8216;always commit
+to master as soon as you can&#8217; and &#8216;never commit to master&#8217; strategies with
+success.</p>
 </div>
   
   
