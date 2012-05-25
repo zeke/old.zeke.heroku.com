@@ -9,8 +9,8 @@
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="I recently started a heroku email thread in search of a good git branching strategy. I got some good feedback: @pvh:
-&#8220;Don&#8217;t branch! If &hellip;">
+  <meta name="description" content="Cruising through some heroku source code today, I came across a stylesheet link tag that
+looked something like this: &lt;link href='//nav.heroku.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,56 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/25/protocol-relative-url/">Double-Slash?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-25T10:41:00-07:00" pubdate data-updated="true">May 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="no-border" src="/images/extra/http-double-slash.jpg" title="double-slash" ></p>
+
+<p>Cruising through some heroku source code today, I came across a stylesheet link tag that
+looked something like this:</p>
+
+<pre><code>&lt;link href='//nav.heroku.com/header.css' media='all' rel='stylesheet' type='text/css'&gt;
+</code></pre>
+
+<p>Notice the funky double-slash at the beginning of the URL. Weird, right? I&#8217;d never seen it either.
+It&#8217;s a <strong>protocol-relative URL</strong>. <a href="http://paulirish.com/2010/the-protocol-relative-url/">Paul Irish explains:</a></p>
+
+<p><em>&#8220;If the browser is viewing that current page in through HTTPS, then it&#8217;ll request that asset with the
+HTTPS protocol, otherwise it&#8217;ll typically request it with HTTP. This prevents that awful &#8220;This Page
+Contains Both Secure and Non-Secure Items&#8221; error message in IE, keeping all your asset requests
+within the same protocol.&#8221;</em></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -484,6 +534,10 @@ Master Po: Young man, how is it that you do not?</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/05/25/protocol-relative-url/">Double-Slash?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/05/16/to-branch-or-not-to-branch/">To Branch Or Not To Branch</a>
       </li>
     
@@ -497,10 +551,6 @@ Master Po: Young man, how is it that you do not?</p>
     
       <li class="post">
         <a href="/blog/2012/05/11/ping-heroku-keepalive/">Keeping your unidyno humming</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/10/bun-dull-egg-zeck/">Bun Dull Egg Zeck</a>
       </li>
     
   </ul>

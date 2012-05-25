@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Bun Dull Egg Zeck - spring-grasshopper-86</title>
+  <title>Double-Slash? - spring-grasshopper-86</title>
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="News flash! When working on a ruby project, you should prepend every shell command
-with bundle exec to ensure you&#8217;re using the bundled &hellip;">
+  <meta name="description" content="Cruising through some heroku source code today, I came across a stylesheet link tag that
+looked something like this: &lt;link href='//nav.heroku.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ with bundle exec to ensure you&#8217;re using the bundled &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zeke.heroku.com/blog/2012/05/10/bun-dull-egg-zeck">
+  <link rel="canonical" href="http://zeke.heroku.com/blog/2012/05/25/protocol-relative-url">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +68,7 @@ with bundle exec to ensure you&#8217;re using the bundled &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Bun Dull Egg Zeck</h1>
+      <h1 class="entry-title">Double-Slash?</h1>
     
     
       <p class="meta">
@@ -84,19 +84,28 @@ with bundle exec to ensure you&#8217;re using the bundled &hellip;">
   
 
 
-<time datetime="2012-05-10T23:56:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+<time datetime="2012-05-25T10:41:00-07:00" pubdate data-updated="true">May 25<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>News flash! When working on a ruby project, you should prepend every shell command
-with <strong>bundle exec</strong> to ensure you&#8217;re using the bundled dependencies, and not
-stuff that&#8217;s specific to your environment. But who wants to type
-<strong>bundle exec</strong> 500 times a day? Neither I nor
-<a href="http://blog.davidchelimsky.net/2011/07/18/stop-typing-bundle-exec/">David Chelimsky</a>.
-That&#8217;s who.</p>
+<div class="entry-content"><p><img class="no-border" src="/images/extra/http-double-slash.jpg" title="double-slash" ></p>
+
+<p>Cruising through some heroku source code today, I came across a stylesheet link tag that
+looked something like this:</p>
+
+<pre><code>&lt;link href='//nav.heroku.com/header.css' media='all' rel='stylesheet' type='text/css'&gt;
+</code></pre>
+
+<p>Notice the funky double-slash at the beginning of the URL. Weird, right? I&#8217;d never seen it either.
+It&#8217;s a <strong>protocol-relative URL</strong>. <a href="http://paulirish.com/2010/the-protocol-relative-url/">Paul Irish explains:</a></p>
+
+<p><em>&#8220;If the browser is viewing that current page in through HTTPS, then it&#8217;ll request that asset with the
+HTTPS protocol, otherwise it&#8217;ll typically request it with HTTP. This prevents that awful &#8220;This Page
+Contains Both Secure and Non-Secure Items&#8221; error message in IE, keeping all your asset requests
+within the same protocol.&#8221;</em></p>
 </div>
 
 
@@ -119,7 +128,7 @@ That&#8217;s who.</p>
   
 
 
-<time datetime="2012-05-10T23:56:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+<time datetime="2012-05-25T10:41:00-07:00" pubdate data-updated="true">May 25<span>th</span>, 2012</time>
       
 
 
@@ -127,7 +136,7 @@ That&#8217;s who.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zeke.heroku.com/blog/2012/05/10/bun-dull-egg-zeck/" data-via="" data-counturl="http://zeke.heroku.com/blog/2012/05/10/bun-dull-egg-zeck/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zeke.heroku.com/blog/2012/05/25/protocol-relative-url/" data-via="" data-counturl="http://zeke.heroku.com/blog/2012/05/25/protocol-relative-url/" >Tweet</a>
   
   
   
@@ -136,10 +145,8 @@ That&#8217;s who.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/05/10/clang/" title="Previous Post: What the eff is clang?">&laquo; What the eff is clang?</a>
+        <a class="basic-alignment left" href="/blog/2012/05/16/to-branch-or-not-to-branch/" title="Previous Post: To Branch Or Not To Branch">&laquo; To Branch Or Not To Branch</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/05/11/ping-heroku-keepalive/" title="Next Post: Keeping your unidyno humming">Keeping your unidyno humming &raquo;</a>
       
     </p>
   </footer>
@@ -217,8 +224,8 @@ That&#8217;s who.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zeke.heroku.com/blog/2012/05/10/bun-dull-egg-zeck/';
-        var disqus_url = 'http://zeke.heroku.com/blog/2012/05/10/bun-dull-egg-zeck/';
+        var disqus_identifier = 'http://zeke.heroku.com/blog/2012/05/25/protocol-relative-url/';
+        var disqus_url = 'http://zeke.heroku.com/blog/2012/05/25/protocol-relative-url/';
         var disqus_script = 'embed.js';
       
     (function () {
