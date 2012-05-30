@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-05-25T10:51:51-07:00</updated>
+  <updated>2012-05-30T16:47:41-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Haiku]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/05/30/haiku/"/>
+    <updated>2012-05-30T16:29:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/05/30/haiku</id>
+    <content type="html"><![CDATA[<p>As a heroku customer, I always wondered what words were used to generate app names like <em>electric-samurai-44</em> and and <em>morning-waterfall-387</em>. Now that I&#8217;m on the inside, I know. The class that generates these names is aptly named &#8220;Haiku&#8221;.</p>
+
+<p><strong>Adjectives</strong>: afternoon, blazing, blooming, cold, deep, electric, empty, evening, falling, fierce, floating, freezing, furious, gentle, glowing, growing, high, hollow, morning, pure, quiet, radiant, severe, sharp, simple, smooth, stark, stormy, strong, vivid, warm, young.</p>
+
+<p><strong>Nouns</strong>: autumn, beach, cloud, dawn, day, dusk, earth, fire, flower, fog, frost, galaxy, ice, journey, leaf, light, lightning, meadow, mist, mist, moon, mountain, mountain, night, ocean, planet, rain, river, robot, samurai, sky, snow, spring, stone, stream, summer, sunrise, sunset, sword, warrior, water, waterfall, wind, window, winter.</p>
+
+<p>Bonus: If you happen to create a nameless app on Halloween, these adjectives are thrown into the mix: creepy, eerie, ghostly, ghoulish, grisly, haunted, macabre, scary, spooky.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Double-Slash?]]></title>

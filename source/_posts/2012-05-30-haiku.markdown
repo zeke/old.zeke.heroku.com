@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Haiku"
+date: 2012-05-30 16:29
+comments: true
+categories: 
+---
+
+As a heroku customer, I always wondered what words were used to generate app names like _electric-samurai-44_ and and _morning-waterfall-387_. Now that I'm on the inside, I know. The class that generates these names is aptly named "Haiku".
+
+**Adjectives**: afternoon, blazing, blooming, cold, deep, electric, empty, evening, falling, fierce, floating, freezing, furious, gentle, glowing, growing, high, hollow, morning, pure, quiet, radiant, severe, sharp, simple, smooth, stark, stormy, strong, vivid, warm, young.
+
+**Nouns**: autumn, beach, cloud, dawn, day, dusk, earth, fire, flower, fog, frost, galaxy, ice, journey, leaf, light, lightning, meadow, mist, mist, moon, mountain, mountain, night, ocean, planet, rain, river, robot, samurai, sky, snow, spring, stone, stream, summer, sunrise, sunset, sword, warrior, water, waterfall, wind, window, winter.
+
+Bonus: If you happen to create a nameless app on Halloween, these adjectives are thrown into the mix: creepy, eerie, ghostly, ghoulish, grisly, haunted, macabre, scary, spooky.
