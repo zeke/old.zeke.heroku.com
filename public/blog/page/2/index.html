@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>To Branch Or Not To Branch - spring-grasshopper-86</title>
+  <title>spring-grasshopper-86</title>
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="I recently started a heroku email thread in search of a good git branching strategy. I got some good feedback: @pvh:
-&#8220;Don&#8217;t branch! If &hellip;">
+  <meta name="description" content="Master Po: Do you hear the grasshopper that is at your feet?
+Young Caine: Old man, how is it that you hear these things?
+Master Po: Young man, how is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zeke.heroku.com/blog/2012/05/16/to-branch-or-not-to-branch">
+  <link rel="canonical" href="http://zeke.heroku.com/blog/page/2">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,12 +64,15 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">To Branch or Not to Branch</h1>
+      <h1 class="entry-title"><a href="/blog/2012/05/10/so-it-begins/">So It Begins</a></h1>
     
     
       <p class="meta">
@@ -84,98 +88,33 @@
   
 
 
-<time datetime="2012-05-16T22:52:00-07:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
+<time datetime="2012-05-10T22:50:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I recently started a heroku email thread in search of a good git branching strategy. I got some good feedback:</p>
+  <div class="entry-content"><p>Master Po: Do you hear the grasshopper that is at your feet?<br>
+Young Caine: Old man, how is it that you hear these things?<br>
+Master Po: Young man, how is it that you do not?</p>
 
-<p><strong><a href="https://twitter.com/#!/pvh">@pvh</a></strong>:
-&#8220;Don&#8217;t branch! If you have to branch keep it short (like, a day or two tops). In general, everything you do (everywhere!) should be designed to roll out incrementally in many small steps. [&#8230;] To be fair, we don&#8217;t want &#8216;branches&#8217;, so much as we want transient named pull requests that use branches as a transport mechanism.&#8221;</p>
-
-<p><strong><a href="https://twitter.com/#!/michaelahale">@michaelahale</a></strong>:
-&#8220;I prefer short-lived feature branches. That provides an opportunity for review before committing to master. I&#8217;m pretty sure
-everyone would agree that we do <strong>not</strong> want <a href="http://nvie.com/posts/a-successful-git-branching-model/">[the nvie branching model]</a>.&#8221;</p>
-
-<p><strong><a href="https://twitter.com/#!/ped">@ped</a>ro</strong>:
-&#8220;I think even with incremental roll outs branches are still useful.
-At the API team we normally use branches for anything that is not
-trivial or that deserves a review. The changes on the branch most of
-the time are still designed to be rolled out incrementally, but having
-a branch and pull request allows us to review those changes before
-they get to master (and as we move close to automated deploys having
-master always green/deployable is crucial).&#8221;</p>
-
-<p><strong><a href="https://twitter.com/#!/glenngillen">@glenngillen</a></strong>:
-&#8220;Probably a good summation: <a href="http://scottchacon.com/2011/08/31/github-flow.html">scottchacon.com/2011/08/31/github-flow.html</a>&#8221;</p>
-
-<p><strong><a href="https://twitter.com/#!/em_csquared">@em_csquared</a></strong>:
-&#8220;I think the real answer is that the
-&#8216;heroku style&#8217; would be to do what works best for your team.
-If other teams are doing something you like you should absolutely steal it.
-And if they&#8217;re doing something you don&#8217;t then be an example of a better way.
-[&#8230;] I&#8217;ve seen us internally use both &#8216;always commit
-to master as soon as you can&#8217; and &#8216;never commit to master&#8217; strategies with
-success.</p>
+<p><img src="/images/extra/insecte-sauterelle.jpg" title="Insect Sauterelle Origami" ></p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Zeke Sikelianos</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2012-05-16T22:52:00-07:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
-      
-
-
-    </p>
+    </article>
+  
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zeke.heroku.com/blog/2012/05/16/to-branch-or-not-to-branch/" data-via="" data-counturl="http://zeke.heroku.com/blog/2012/05/16/to-branch-or-not-to-branch/" >Tweet</a>
-  
-  
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/05/15/the-nerd-tree/" title="Previous Post: The NERD Tree">&laquo; The NERD Tree</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/05/25/protocol-relative-url/" title="Next Post: Double-Slash?">Double-Slash? &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
 </div>
-  </section>
-
-</div>
-
 <aside class="sidebar">
   
     <section>
@@ -213,7 +152,6 @@ success.</p>
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -239,10 +177,7 @@ success.</p>
       var disqus_shortname = 'spring-grasshopper-86';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://zeke.heroku.com/blog/2012/05/16/to-branch-or-not-to-branch/';
-        var disqus_url = 'http://zeke.heroku.com/blog/2012/05/16/to-branch-or-not-to-branch/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
