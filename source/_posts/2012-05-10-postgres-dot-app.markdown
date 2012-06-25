@@ -38,3 +38,6 @@ That's not all folks. Postgress.app has a great logo too!
 **Update**: If you've already got another version of postgres installed, you may need to prepend Postgres.app's binary to your PATH:
 
     export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
+    
+**Update 2**: There's a great [eight-minute Railscast on Migrating to PostgreSQL](http://railscasts.com/episodes/342-migrating-to-postgresql) 
+that has some tips regarding use of PostgreSQL with Rails.
