@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-06-25T12:55:27-07:00</updated>
+  <updated>2012-07-02T15:03:28-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[No Stinking Dashes]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/07/02/no-stinking-dashes/"/>
+    <updated>2012-07-02T14:48:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/07/02/no-stinking-dashes</id>
+    <content type="html"><![CDATA[<p>jQuery (as of 1.7.2) doesn&#8217;t allow dashes in HTML <code>data-</code> attribute names, so you&#8217;re better off
+using underscores instead. Check out <a href="http://jsfiddle.net/xhSPQ/">this jsfiddle</a> for evidence.</p>
+
+<p><a href="http://jsfiddle.net/xhSPQ/">
+  <img class="no-border" src="http://zeke.heroku.com/images/extra/no-stinking-dashes.png">
+</a></p>
+
+<p>And while we&#8217;re on the topic, I discovered today that Haml now supports a <code>:data</code> attribute.
+Give it a (flat) ruby Hash and each of the key/value pairs will be transformed into a custom HTML5 data attribute.
+<a href="http://haml.info/docs/yardoc/file.HAML_REFERENCE.html#html5_custom_data_attributes">Huzzah!</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Break it (Mark)down]]></title>

@@ -9,8 +9,8 @@
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="Pro Tip: Add two spaces to the end of a line in your markdown file and they&#8217;ll be converted to a &lt;br&gt; tag!
-">
+  <meta name="description" content="jQuery (as of 1.7.2) doesn&#8217;t allow dashes in HTML data- attribute names, so you&#8217;re better off
+using underscores instead. Check out this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/02/no-stinking-dashes/">No Stinking Dashes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-02T14:48:00-07:00" pubdate data-updated="true">Jul 2<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>jQuery (as of 1.7.2) doesn&#8217;t allow dashes in HTML <code>data-</code> attribute names, so you&#8217;re better off
+using underscores instead. Check out <a href="http://jsfiddle.net/xhSPQ/">this jsfiddle</a> for evidence.</p>
+
+<p><a href="http://jsfiddle.net/xhSPQ/">
+  <img class="no-border" src="/images/extra/no-stinking-dashes.png">
+</a></p>
+
+<p>And while we&#8217;re on the topic, I discovered today that Haml now supports a <code>:data</code> attribute.
+Give it a (flat) ruby Hash and each of the key/value pairs will be transformed into a custom HTML5 data attribute.
+<a href="http://haml.info/docs/yardoc/file.HAML_REFERENCE.html#html5_custom_data_attributes">Huzzah!</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -490,78 +535,6 @@ rvm install 1.9.3-head
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/10/postgres-dot-app/">Postgres.app</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-10T23:00:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Factor X in Adam Wiggins&#8217; <a href="http://www.12factor.net/dev-prod-parity">Twelve-Factor App</a>
-is <strong>dev/prod parity</strong>: the idea that your development, staging, and production environments
-should be as similar as possible to minimize unexpected problems.</p>
-
-<p>For the heroku user, one easy move toward such parity is using postgres in the development
-environment. In the past I was reluctant to use postgres because it was difficult to install
-and it was always easier to use MySQL or SQLite because the barrier was lower.</p>
-
-<p>But I&#8217;m happy to say that the <a href="http://twitter.com/mattt">@mattt</a>&#8217;s new project,
-<a href="http://postgresapp.com/">Postgres.app</a>, soothes that pain: <em>&#8220;Open the app, and you have
-a PostgreSQL server ready and awaiting new connections. Close the app, and the server shuts down.&#8221;</em>
-Here&#8217;s an example database configuration that works with Postgres.app right out of the box:</p>
-
-<pre><code>development:
-  adapter: postgresql
-  host: localhost
-  database: dreamboat-development
-
-test:
-  adapter: postgresql
-  host: localhost
-  database: dreamboat-test
-</code></pre>
-
-<p>That&#8217;s not all folks. Postgress.app has a great logo too!</p>
-
-<p><a href="http://postgresapp.com/">
-  <img class="no-border" src="/images/extra/netsuke.png">
-</a></p>
-
-<p><strong>Update</strong>: If you&#8217;ve already got another version of postgres installed, you may need to prepend Postgres.app&#8217;s binary to your PATH:</p>
-
-<pre><code>export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
-</code></pre>
-
-<p><strong>Update 2</strong>: There&#8217;s a great <a href="http://railscasts.com/episodes/342-migrating-to-postgresql">eight-minute Railscast on Migrating to PostgreSQL</a>
-that has some tips regarding use of PostgreSQL with Rails.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -577,6 +550,10 @@ that has some tips regarding use of PostgreSQL with Rails.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/02/no-stinking-dashes/">No Stinking Dashes</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/06/09/markdown-br/">Break it (Mark)down</a>
       </li>
     
@@ -590,10 +567,6 @@ that has some tips regarding use of PostgreSQL with Rails.</p>
     
       <li class="post">
         <a href="/blog/2012/05/16/to-branch-or-not-to-branch/">To Branch Or Not To Branch</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/15/the-nerd-tree/">The NERD Tree</a>
       </li>
     
   </ul>
