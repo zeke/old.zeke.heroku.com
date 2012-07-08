@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-07-02T15:03:28-07:00</updated>
+  <updated>2012-07-08T12:00:33-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -20,6 +20,9 @@
     <id>http://zeke.heroku.com/blog/2012/07/02/no-stinking-dashes</id>
     <content type="html"><![CDATA[<p>jQuery (as of 1.7.2) doesn&#8217;t allow dashes in HTML <code>data-</code> attribute names, so you&#8217;re better off
 using underscores instead. Check out <a href="http://jsfiddle.net/xhSPQ/">this jsfiddle</a> for evidence.</p>
+
+<p><strong>Update</strong>: The dashes are not the problem: there&#8217;s a <a href="http://zeke.heroku.com/blog/2012/07/02/no-stinking-dashes/#comment-576000854">bug in jQuery 1.7.2</a>
+regarding attributes that contain a digit after a dash.</p>
 
 <p><a href="http://jsfiddle.net/xhSPQ/">
   <img class="no-border" src="http://zeke.heroku.com/images/extra/no-stinking-dashes.png">

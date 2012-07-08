@@ -9,6 +9,9 @@ categories:
 jQuery (as of 1.7.2) doesn't allow dashes in HTML `data-` attribute names, so you're better off
 using underscores instead. Check out [this jsfiddle](http://jsfiddle.net/xhSPQ/) for evidence.
 
+**Update**: The dashes are not the problem: there's a [bug in jQuery 1.7.2](http://zeke.heroku.com/blog/2012/07/02/no-stinking-dashes/#comment-576000854) 
+regarding attributes that contain a digit after a dash.
+
 <a href="http://jsfiddle.net/xhSPQ/">
   {% img no-border /images/extra/no-stinking-dashes.png %}
 </a>
