@@ -9,8 +9,8 @@
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="jQuery (as of 1.7.2) doesn&#8217;t allow dashes in HTML data- attribute names, so you&#8217;re better off
-using underscores instead. Check out this &hellip;">
+  <meta name="description" content="Want to keep sensitive data out of your BASH history? Set this environment variable in
+.bash_profile or .bashrc, then prepend a space to any &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,52 @@ using underscores instead. Check out this &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/10/stealthy-bashing/">Stealthy BASHing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-10T11:42:00-07:00" pubdate data-updated="true">Sep 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Want to keep sensitive data out of your BASH history? Set this environment variable in
+<code>.bash_profile</code> or <code>.bashrc</code>, then prepend a space to any sensitive command you type
+and it will not show up in your history.</p>
+
+<pre><code>export HISTCONTROL=ignoreboth
+</code></pre>
+
+<p>Alternatively here&#8217;s a one-off approach that prompts you for your secret value:</p>
+
+<pre><code>heroku config:add SECRET=`read x; echo $x`
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -485,59 +531,6 @@ That&#8217;s who.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/10/clang/">What the Eff Is Clang?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-10T23:42:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>On my first day at heroku, I was happily setting up my machine for
-development until a collision between Xcode 4.3.2 and rvm stopped me in my tracks.
-After much googling, I found this insightful bit on
-<a href="http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/">jfire.io</a>:</p>
-
-<p><em>Ruby on Mac OS Lion is going through a bit of a rough patch, installation-wise. With Xcode 4.2, clang became the default compiler and gcc was no longer included. Unfortunately, this has caused a lot of grief for Rubyists on OS X, because for a while, MRI did not officially support compiling with clang. With the release of 1.9.3-p125, that situation has changed–clang is now officially supported–but there are still some gotchas. This post details my toolchain and process for running MRI 1.9.3 and 1.8.7 on Lion with Xcode 4.3.</em></p>
-
-<p>Installing GCC with homebrew is what solved it:</p>
-
-<pre><code>brew update
-brew install autoconf automake
-brew install https://raw.github.com/Homebrew/homebrew-dupes/master/apple-gcc42.rb
-rvm get head
-rvm install 1.8.7
-rvm install 1.9.3-head
-</code></pre>
-
-<p>Now I know what <a href="http://en.wikipedia.org/wiki/Clang">clang</a> is. Yay.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -553,6 +546,10 @@ rvm install 1.9.3-head
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/10/stealthy-bashing/">Stealthy BASHing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/02/no-stinking-dashes/">No Stinking Dashes</a>
       </li>
     
@@ -566,10 +563,6 @@ rvm install 1.9.3-head
     
       <li class="post">
         <a href="/blog/2012/05/25/protocol-relative-url/">Double-Slash?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/16/to-branch-or-not-to-branch/">To Branch Or Not To Branch</a>
       </li>
     
   </ul>

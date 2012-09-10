@@ -9,9 +9,8 @@
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="Factor X in Adam Wiggins&#8217; Twelve-Factor App
-is dev/prod parity: the idea that your development, staging, and production environments
-should be &hellip;">
+  <meta name="description" content="On my first day at heroku, I was happily setting up my machine for
+development until a collision between Xcode 4.3.2 and rvm stopped me in my tracks &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +65,59 @@ should be &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/10/clang/">What the Eff Is Clang?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-10T23:42:00-07:00" pubdate data-updated="true">May 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On my first day at heroku, I was happily setting up my machine for
+development until a collision between Xcode 4.3.2 and rvm stopped me in my tracks.
+After much googling, I found this insightful bit on
+<a href="http://jfire.io/blog/2012/03/02/xcode-4-dot-3-homebrew-and-ruby/">jfire.io</a>:</p>
+
+<p><em>Ruby on Mac OS Lion is going through a bit of a rough patch, installation-wise. With Xcode 4.2, clang became the default compiler and gcc was no longer included. Unfortunately, this has caused a lot of grief for Rubyists on OS X, because for a while, MRI did not officially support compiling with clang. With the release of 1.9.3-p125, that situation has changed–clang is now officially supported–but there are still some gotchas. This post details my toolchain and process for running MRI 1.9.3 and 1.8.7 on Lion with Xcode 4.3.</em></p>
+
+<p>Installing GCC with homebrew is what solved it:</p>
+
+<pre><code>brew update
+brew install autoconf automake
+brew install https://raw.github.com/Homebrew/homebrew-dupes/master/apple-gcc42.rb
+rvm get head
+rvm install 1.8.7
+rvm install 1.9.3-head
+</code></pre>
+
+<p>Now I know what <a href="http://en.wikipedia.org/wiki/Clang">clang</a> is. Yay.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -194,6 +246,10 @@ Master Po: Young man, how is it that you do not?</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/10/stealthy-bashing/">Stealthy BASHing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/02/no-stinking-dashes/">No Stinking Dashes</a>
       </li>
     
@@ -207,10 +263,6 @@ Master Po: Young man, how is it that you do not?</p>
     
       <li class="post">
         <a href="/blog/2012/05/25/protocol-relative-url/">Double-Slash?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/16/to-branch-or-not-to-branch/">To Branch Or Not To Branch</a>
       </li>
     
   </ul>

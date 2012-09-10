@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Break it (Mark)down - spring-grasshopper-86</title>
+  <title>Stealthy BASHing - spring-grasshopper-86</title>
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="Pro Tip: Add two spaces to the end of a line in your markdown file and they&#8217;ll be converted to a &lt;br&gt; tag!
-">
+  <meta name="description" content="Want to keep sensitive data out of your BASH history? Set this environment variable in
+.bash_profile or .bashrc, then prepend a space to any &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zeke.heroku.com/blog/2012/06/09/markdown-br">
+  <link rel="canonical" href="http://zeke.heroku.com/blog/2012/09/10/stealthy-bashing">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Break It (Mark)down</h1>
+      <h1 class="entry-title">Stealthy BASHing</h1>
     
     
       <p class="meta">
@@ -84,14 +84,24 @@
   
 
 
-<time datetime="2012-06-09T20:50:00-07:00" pubdate data-updated="true">Jun 9<span>th</span>, 2012</time>
+<time datetime="2012-09-10T11:42:00-07:00" pubdate data-updated="true">Sep 10<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Pro Tip: Add two spaces to the end of a line in your markdown file and they&#8217;ll be converted to a <code>&lt;br&gt;</code> tag!</p>
+<div class="entry-content"><p>Want to keep sensitive data out of your BASH history? Set this environment variable in
+<code>.bash_profile</code> or <code>.bashrc</code>, then prepend a space to any sensitive command you type
+and it will not show up in your history.</p>
+
+<pre><code>export HISTCONTROL=ignoreboth
+</code></pre>
+
+<p>Alternatively here&#8217;s a one-off approach that prompts you for your secret value:</p>
+
+<pre><code>heroku config:add SECRET=`read x; echo $x`
+</code></pre>
 </div>
 
 
@@ -114,7 +124,7 @@
   
 
 
-<time datetime="2012-06-09T20:50:00-07:00" pubdate data-updated="true">Jun 9<span>th</span>, 2012</time>
+<time datetime="2012-09-10T11:42:00-07:00" pubdate data-updated="true">Sep 10<span>th</span>, 2012</time>
       
 
 
@@ -122,7 +132,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zeke.heroku.com/blog/2012/06/09/markdown-br/" data-via="" data-counturl="http://zeke.heroku.com/blog/2012/06/09/markdown-br/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zeke.heroku.com/blog/2012/09/10/stealthy-bashing/" data-via="" data-counturl="http://zeke.heroku.com/blog/2012/09/10/stealthy-bashing/" >Tweet</a>
   
   
   
@@ -131,10 +141,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/05/30/haiku/" title="Previous Post: Haiku">&laquo; Haiku</a>
+        <a class="basic-alignment left" href="/blog/2012/07/02/no-stinking-dashes/" title="Previous Post: No Stinking Dashes">&laquo; No Stinking Dashes</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/07/02/no-stinking-dashes/" title="Next Post: No Stinking Dashes">No Stinking Dashes &raquo;</a>
       
     </p>
   </footer>
@@ -212,8 +220,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zeke.heroku.com/blog/2012/06/09/markdown-br/';
-        var disqus_url = 'http://zeke.heroku.com/blog/2012/06/09/markdown-br/';
+        var disqus_identifier = 'http://zeke.heroku.com/blog/2012/09/10/stealthy-bashing/';
+        var disqus_url = 'http://zeke.heroku.com/blog/2012/09/10/stealthy-bashing/';
         var disqus_script = 'embed.js';
       
     (function () {
