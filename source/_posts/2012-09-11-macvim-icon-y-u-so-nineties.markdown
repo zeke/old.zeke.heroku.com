@@ -17,5 +17,8 @@ migration from TextMate more bearable.
   {% img no-border /images/extra/macvim_icons.png %}
 </a>
 
+To install this icon, download [MacVim.icns](http://cl.ly/0f18090S3d2W/download/MacVim.icns) and 
+replace the one in `MacVim.app/Contents/Resources`.
+
 I've heard it said before that you have to try vim **five times** before you stick to it -- here's to
 round two!

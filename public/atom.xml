@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-09-11T23:09:39-07:00</updated>
+  <updated>2012-09-11T23:15:41-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -28,6 +28,9 @@ migration from TextMate more bearable.</p>
 <p><a href="http://dribbble.com/shots/337065-MacVim-Icon-Updated">
   <img class="no-border" src="http://zeke.heroku.com/images/extra/macvim_icons.png">
 </a></p>
+
+<p>To install this icon, download <a href="http://cl.ly/0f18090S3d2W/download/MacVim.icns">MacVim.icns</a> and
+replace the one in <code>MacVim.app/Contents/Resources</code>.</p>
 
 <p>I&#8217;ve heard it said before that you have to try vim <strong>five times</strong> before you stick to it &#8211; here&#8217;s to
 round two!</p>
