@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-09-10T11:51:38-07:00</updated>
+  <updated>2012-09-11T23:09:39-07:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Better MacVim Icon]]></title>
+    <link href="http://zeke.heroku.com/blog/2012/09/11/macvim-icon-y-u-so-nineties/"/>
+    <updated>2012-09-11T22:20:00-07:00</updated>
+    <id>http://zeke.heroku.com/blog/2012/09/11/macvim-icon-y-u-so-nineties</id>
+    <content type="html"><![CDATA[<p>Today my awesome new teammate <a href="https://twitter.com/mattonrails">@mattonrails</a> helped me trick out my vim setup.
+I&#8217;m excited at the prospect of using MacVim regularly as a replacement to TextMate, but I couldn&#8217;t bear the
+thought of seeing MacVim&#8217;s nasty Windows-95-lookin&#8217; icon in my dock every day. Fortunately I&#8217;m not the only person
+who feels this way: The talented <a href="http://drewyeaton.com/">Drew Yeaton</a> created a very nice
+<a href="http://dribbble.com/shots/337065-MacVim-Icon-Updated">replacement icon</a> which should help make my
+migration from TextMate more bearable.</p>
+
+<p><a href="http://dribbble.com/shots/337065-MacVim-Icon-Updated">
+  <img class="no-border" src="http://zeke.heroku.com/images/extra/macvim_icons.png">
+</a></p>
+
+<p>I&#8217;ve heard it said before that you have to try vim <strong>five times</strong> before you stick to it &#8211; here&#8217;s to
+round two!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Stealthy BASHing]]></title>
