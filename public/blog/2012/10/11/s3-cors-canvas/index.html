@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tips for setting up CORS on S3 - spring-grasshopper-86</title>
+  <meta name="author" content="Zeke Sikelianos">
+
+  
+  <meta name="description" content="I&#8217;ve been working on a project that uses an awesome Javascript library called Color Thief
+to extract a color palette from an image. Now that S3 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zeke.heroku.com/blog/2012/10/11/s3-cors-canvas">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="spring-grasshopper-86" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">spring-grasshopper-86</a></h1>
+  
+    <h2>Development journal of Zeke Sikelianos, the eighty-sixth herokai.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zeke.heroku.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Tips for Setting Up CORS on S3</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-11T10:08:00-07:00" pubdate data-updated="true">Oct 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&#8217;ve been working on a project that uses an awesome Javascript library called <a href="http://lokeshdhakar.com/projects/color-thief/">Color Thief</a>
+to extract a color palette from an image. Now that <a href="http://aws.amazon.com/about-aws/whats-new/2012/08/31/amazon-s3-announces-cross-origin-resource-sharing-CORS-support/">S3 has CORS support</a>,
+it&#8217;s easier than ever to do client-side manipulation of user-uploaded images using Canvas.
+In this post I&#8217;ll cover some of the things that tripped me up along the way.</p>
+
+<p>Check out the
+<a href="http://cors-example.herokuapp.com/">demo on heroku</a>
+and the
+<a href="https://github.com/zeke/cors-example">demo source on github</a>.</p>
+
+<p><a href="http://cors-example.herokuapp.com/">
+  <img src="http://f.cl.ly/items/2n3X080M272Q0B0K1r2E/Screen%20Shot%202012-10-16%20at%205.35.28%20PM.png">
+</a></p>
+
+<h2>Testing with curl</h2>
+
+<p>Setting up CORS on your S3 bucket can be accomplished pretty easily using the
+<a href="https://console.aws.amazon.com/s3">S3 management console web interface</a>. It looks like this:
+<a href="https://console.aws.amazon.com/s3">
+  <img class="no-border" src="http://f.cl.ly/items/2e3A3Z1m3I3t1v3y0i2t/Screen%20Shot%202012-10-16%20at%203.54.44%20PM.png">
+</a></p>
+
+<p>Once you&#8217;ve got your bucket configured,
+you can use <code>curl</code> to verify that your CORS configuration is
+working. Simply set an an origin header when making the request:</p>
+
+<pre><code>curl -H "Origin: http://example.com" --verbose \
+  http://cors-example.s3.amazonaws.com/rainbow.jpg
+</code></pre>
+
+<p>You should see the following response headers:</p>
+
+<pre><code>&lt; HTTP/1.1 200 OK
+&lt; x-amz-id-2: E1JFVQnxrtk0riqK8q2G6RTlMh4zyxC/OTuV5AEUUDcCa9AXXL/C00iX2i5dmjZW
+&lt; x-amz-request-id: AD2BA8F701742FD8
+&lt; Date: Tue, 16 Oct 2012 22:30:25 GMT
+&lt; Access-Control-Allow-Origin: http://example.com
+&lt; Access-Control-Allow-Methods: GET
+&lt; Access-Control-Max-Age: 3000
+&lt; Access-Control-Allow-Credentials: true
+</code></pre>
+
+<h2>Use the bucket-as-subdomain S3 URL format</h2>
+
+<p>S3 URLs come in two flavors: domain-style (bucket.s3.amazonaws.com)
+and path-style (s3.amazonaws.com/bucket). In order for CORS to work,
+your must use domain-style URLs.</p>
+
+<pre><code>http://cors-example.s3.amazonaws.com/rainbow.jpg # Good
+http://s3.amazonaws.com/cors-example/rainbow.jpg # Bad
+</code></pre>
+
+<h2>Don&#8217;t use periods in your bucket names</h2>
+
+<p>Using a period in the bucket name name may confuse your browser and/or S3&#8217;s interpretation
+of the subdomain, so it&#8217;s probably best to just avoid it.</p>
+
+<h2>Run a Development Server</h2>
+
+<p>Most browsers won&#8217;t let you access files using the file:// protocol.
+To get around this, use python&#8217;s simpleServer to run a local server
+on port 8000:</p>
+
+<pre><code>python -m SimpleHTTPServer
+</code></pre>
+
+<p>Some browsers give localhost different privileges than regular domains, so open
+your server at <a href="http://lvh.me:8000">lvh.me:8000</a> instead of localhost:8000.
+lvh.me is a domain that somebody bought and pointed at 127.0.0.1 expressly for
+this purpose. How nice of them!</p>
+
+<h2>Refresh Often</h2>
+
+<p>Google Chrome has a tendency to cache images for a bit, regardless of the site from which you&#8217;re requesting them.
+Sometimes you have to force-refresh when you see this error in Chrome&#8217;s Javascript console:</p>
+
+<pre><code>Cross-origin image load denied by Cross-Origin Resource Sharing policy.
+</code></pre>
+
+<h2>Don&#8217;t Taint the Canvas</h2>
+
+<p>When attempting to read data from an image on another domain using a Canvas function like
+<code>getImageData</code> (which tools like Color Thief rely on),
+<strong>you can&#8217;t read the data if the image is already present in the DOM</strong>. Instead you must
+use Javascript to create a new DOM element, then assign its <code>crossOrigin</code> and <code>src</code>
+attributes, as depicted in
+<a href="https://github.com/zeke/cors-example/blob/master/public/coffee/app.coffee">this coffeescript snippet</a>:</p>
+
+<pre><code>$ -&gt;
+  $('#rainbow').load -&gt;  
+    img = new Image
+    canvas = document.createElement("canvas")
+    ctx = canvas.getContext("2d")
+    img.crossOrigin = "Anonymous"
+    img.src = this.getAttribute('src')
+
+    img.onload = =&gt;
+      canvas.width = img.width
+      canvas.height = img.height
+      ctx.drawImage(img, 0, 0)
+      for rgb in createPalette(img, 5)
+        color = "rgb(#{rgb.join(", ")})"
+        $("#colors").append("&lt;li style='background-color:#{color}'&gt;&lt;/li&gt;")      
+</code></pre>
+
+<h2>Further Reading</h2>
+
+<p>Here are a handful of links that helped me arrive at this working solution:</p>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/CORS_Enabled_Image">developer.mozilla.org/en-US/docs/CORS_Enabled_Image</a></li>
+<li><a href="http://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html">blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html</a></li>
+<li><a href="http://javascript.mfields.org/2011/creating-an-image-in-javascript/">javascript.mfields.org/2011/creating-an-image-in-javascript</a></li>
+<li><a href="http://stackoverflow.com/questions/12812572/trouble-enabling-cors-on-s3">stackoverflow.com/questions/12812572/trouble-enabling-cors-on-s3</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Zeke Sikelianos</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-11T10:08:00-07:00" pubdate data-updated="true">Oct 11<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zeke.heroku.com/blog/2012/10/11/s3-cors-canvas/" data-via="" data-counturl="http://zeke.heroku.com/blog/2012/10/11/s3-cors-canvas/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/11/macvim-icon-y-u-so-nineties/" title="Previous Post: A Better MacVim Icon">&laquo; A Better MacVim Icon</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/11/s3-cors-canvas/">Tips for setting up CORS on S3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/11/macvim-icon-y-u-so-nineties/">A Better MacVim Icon</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/10/stealthy-bashing/">Stealthy BASHing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/02/no-stinking-dashes/">No Stinking Dashes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/09/markdown-br/">Break it (Mark)down</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Design and content by <a href="http://zeke.sikelianos.com">Zeke Sikelianos</a>.<br>
+
+  Subscribe to the <a href="atom.xml">feed</a>
+  and check me out on 
+  <a href="http://cargocollective.com/zeke">cargo</a>,
+  <a href="http://github.com/zeke">github</a>,
+  <a href="http://twitter.com/zeke">twitter</a>,
+  <a href="http://flickr.com/photos/sikelianos/sets">flickr</a>, and
+  <a href="http://zeke.tumblr.com">tumblr</a>.<br>
+  
+<a href="https://twitter.com/zeke" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @zeke</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'spring-grasshopper-86';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zeke.heroku.com/blog/2012/10/11/s3-cors-canvas/';
+        var disqus_url = 'http://zeke.heroku.com/blog/2012/10/11/s3-cors-canvas/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

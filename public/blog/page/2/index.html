@@ -9,8 +9,8 @@
   <meta name="author" content="Zeke Sikelianos">
 
   
-  <meta name="description" content="News flash! When working on a ruby project, you should prepend every shell command
-with bundle exec to ensure you&#8217;re using the bundled &hellip;">
+  <meta name="description" content="If you&#8217;ve got a single-dyno app that keeps winding down from inactivity
+and consequently taking a long time to restart, you can use the free &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,65 @@ with bundle exec to ensure you&#8217;re using the bundled &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/11/ping-heroku-keepalive/">Keeping Your Unidyno Humming</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-11T00:12:00-07:00" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&#8217;ve got a single-dyno app that keeps winding down from inactivity
+and consequently taking a long time to restart, you can use the free
+<a href="https://addons.heroku.com/scheduler">heroku scheduler</a> addon to keep it alive.</p>
+
+<pre><code>heroku addons:add scheduler:standard
+heroku addons:open scheduler
+</code></pre>
+
+<p><img src="http://f.cl.ly/items/2X0j1u010E3T0e1S1N0h/Screen%20Shot%202012-05-11%20at%2012.23.18%20AM.png" alt="heroku scheduler" /></p>
+
+<p>Put this in your Rakefile and smoke it. I mean push it.</p>
+
+<pre><code>require "net/http"
+
+desc "Ping app"
+task :ping do
+  url = 'my-app.herokuapp.com'
+  puts "ping? (#{url})"
+  r = Net::HTTP.new(url, 80).request_head('/')
+  puts "pong! (#{r.code} #{r.message})"
+end
+</code></pre>
+
+<p>Sha. Push it. Push it reeeaall good.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -287,6 +346,10 @@ Master Po: Young man, how is it that you do not?</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/10/11/s3-cors-canvas/">Tips for setting up CORS on S3</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/09/11/macvim-icon-y-u-so-nineties/">A Better MacVim Icon</a>
       </li>
     
@@ -300,10 +363,6 @@ Master Po: Young man, how is it that you do not?</p>
     
       <li class="post">
         <a href="/blog/2012/06/09/markdown-br/">Break it (Mark)down</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/30/haiku/">Haiku</a>
       </li>
     
   </ul>
