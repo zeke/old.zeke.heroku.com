@@ -4,7 +4,7 @@
   <title><![CDATA[spring-grasshopper-86]]></title>
   <link href="http://zeke.heroku.com/atom.xml" rel="self"/>
   <link href="http://zeke.heroku.com/"/>
-  <updated>2012-10-16T17:53:46-07:00</updated>
+  <updated>2013-02-15T10:43:25-08:00</updated>
   <id>http://zeke.heroku.com/</id>
   <author>
     <name><![CDATA[Zeke Sikelianos]]></name>
@@ -323,22 +323,14 @@ and consequently taking a long time to restart, you can use the free
 heroku addons:open scheduler
 </code></pre>
 
-<p><img src="http://f.cl.ly/items/2X0j1u010E3T0e1S1N0h/Screen%20Shot%202012-05-11%20at%2012.23.18%20AM.png" alt="heroku scheduler" /></p>
+<p>Add a scheduler job that uses curl to ping your app every ten minutes:</p>
 
-<p>Put this in your Rakefile and smoke it. I mean push it.</p>
-
-<pre><code>require "net/http"
-
-desc "Ping app"
-task :ping do
-  url = 'my-app.herokuapp.com'
-  puts "ping? (#{url})"
-  r = Net::HTTP.new(url, 80).request_head('/')
-  puts "pong! (#{r.code} #{r.message})"
-end
+<pre><code>curl http://my-app.herokuapp.com
 </code></pre>
 
-<p>Sha. Push it. Push it reeeaall good.</p>
+<p>Here&#8217;s what it looks like:</p>
+
+<p><img src="http://cl.ly/image/1h3A3I0l2A3w/content#.png" alt="heroku scheduler" /></p>
 ]]></content>
   </entry>
   
