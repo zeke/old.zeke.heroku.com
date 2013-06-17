@@ -1,4 +1,10 @@
-zeke.heroku.com
-===============
+# zeke.heroku.com
 
-[heroku subdomain squatting](http://zeke.heroku.com) is the new black.
+[zeke.heroku.com](http://zeke.heroku.com) is a jekyll/octopress blog about my life as a Herokai.
+
+## Usage
+
+```
+rake new_post['the-slug']
+rake preview
+```
